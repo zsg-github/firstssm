@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+    <!-- 将控制器所在包 加入IOC容器 -->
+
+    <context:component-scan base-package="com.ssm"></context:component-scan>
+
+    <!-- 配置视图解析器 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
+
+
+    <!--使用jquery静态资源请求时，没有写相应的请求映射继而报错，此时交由下面的默认servlet处理-->
+    <mvc:default-servlet-handler/>
+
+    <!-- SPringMVC基础配置、标配 -->
+    <mvc:annotation-driven></mvc:annotation-driven>
+
+    <!--配置国际化资源文件-->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"></property>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <property name="maxUploadSize" value="1024000"></property>
+    </bean>
+<!--
+    <mvc:interceptors>
+        <mvc:interceptor>
+
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/testFileUpload"/>
+            <bean class="com.ssm.interceptor.FirstInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/testFileUpload"/>
+            <bean class="com.ssm.interceptor.SecondInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+        -->
+
+</beans>

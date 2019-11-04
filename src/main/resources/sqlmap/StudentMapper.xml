@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--路径不能用classpath:否则报绑定错误-->
+<mapper namespace="com.ssm.dao.StudentMapper">
+
+    <select id="queryStudentByStuno" parameterType="int"  resultType="com.ssm.entity.Student"  >
+		select * from Student where stuNo = #{stuNo}
+	</select>
+
+    <insert id="addStudent" parameterType="com.ssm.entity.Student" >
+		insert into Student(stuNo,stuName,stuAge,stuRegTime) values(#{stuNo},#{stuName},#{stuAge},#{stuRegTime})
+	</insert>
+
+	<select id="queryAllStudent" resultType="com.ssm.entity.Student" >
+		select * from Student
+	</select>
+
+	<delete id="deleteStudentByStuno" parameterType="int">
+		delete from Student where stuNo=#{stuNo}
+	</delete>
+
+	<update id="updateStudentByStuno" parameterType="com.ssm.entity.Student">
+		update Student set stuName=#{stuName},stuAge=#{stuAge},stuRegTime=#{stuRegTime} where stuNo=#{stuNo}
+	</update>
+
+</mapper>
