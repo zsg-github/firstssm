@@ -6,15 +6,14 @@ import java.util.List;
 
 public interface StudentMapper {
 
-     void addStudent(Student student	);
+    void addStudent(Student student);
 
     Student queryStudentByStuno(int stuno);
 
     List<Student> queryAllStudent();
 
-     void deleteStudentByStuno(int stuno);
+    void deleteStudentByStuno(int stuno);
 
-     void updateStudentByStuno(Student student1);
-     
+    void updateStudentByStuno(Student student111);
 
 }
