@@ -16,7 +16,6 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
-
     <!--使用jquery静态资源请求时，没有写相应的请求映射继而报错，此时交由下面的默认servlet处理-->
     <mvc:default-servlet-handler/>
 

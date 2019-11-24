@@ -14,7 +14,7 @@ public interface StudentMapper {
 
      void deleteStudentByStuno(int stuno);
 
-     void updateStudentByStuno(Student stu);
+     void updateStudentByStuno(Student student);
      
 
 }

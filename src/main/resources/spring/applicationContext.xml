@@ -27,7 +27,7 @@
     <!-- 加载db.properties文件 -->
     <bean  id="config" class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer">
         <property name="locations">
-           <value>classpath:jdbc.properties</value>
+            <value>classpath:jdbc.properties</value>
         </property>
 
     </bean>
@@ -57,9 +57,9 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
         <property name="basePackage" value="com.ssm.dao"></property>
         <!--上面basePackage所在的property的作用：
-        将org.lanqiao.mapper包中，所有的接口   产生与之对应的 动态代理对象
+        将com.ssm.dao包中，所有的接口   产生与之对应的 动态代理对象
         （对象名 就是 首字母小写的接口名） ：studentMapper.querystudentBYNO();
-          -->
+        -->
     </bean>
     <!-- MyBatis：
         StudentMapper studentMapper	= session.getMapper(StudentMapper.class);

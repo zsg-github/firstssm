@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<a href="controller/queryStudentByNo/2">查询1号学生</a>
+<a href="controller/queryStudentByNo/4">查询4号学生</a>
 
 
 <br>

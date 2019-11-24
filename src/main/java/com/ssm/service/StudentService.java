@@ -7,6 +7,7 @@ import java.util.List;
 public interface StudentService {
 
     Student queryStudentByNo(int stuNo);
+
     void addStudent(Student student);
 
     List<Student> queryAllStudent();
